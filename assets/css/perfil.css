@@ -1,0 +1,329 @@
+/* ====================================
+   ESTILOS PARA PERFIL Y PEDIDOS
+==================================== */
+
+/* Estilos para la página de perfil */
+.profile-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.profile-info .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.profile-info .form-group:last-child {
+    border-bottom: none;
+}
+
+.profile-info label {
+    font-weight: 600;
+    color: #495057;
+    min-width: 180px;
+}
+
+.profile-info p {
+    margin: 0;
+    color: #6c757d;
+    text-align: right;
+}
+
+/* Acciones del perfil */
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.profile-actions .btn {
+    flex: 1;
+    max-width: 200px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.profile-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Enlaces del perfil */
+.profile-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    color: #495057;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.profile-link:hover {
+    background: #e9ecef;
+    color: #212529;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-link i {
+    font-size: 1.2rem;
+}
+
+/* Estilos para historial de pedidos */
+.order-history {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.order-history-header {
+    background: var(--color-primario);
+    color: white;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.order-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.5rem;
+    transition: background 0.3s ease;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item:hover {
+    background: #f8f9fa;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.order-id {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.order-date {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.order-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.order-status.pendiente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.order-status.procesando {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.order-status.enviado {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.order-status.entregado {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.order-status.cancelado {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.order-products {
+    margin-bottom: 1rem;
+}
+
+.order-product {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.order-product-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.order-product-info {
+    flex: 1;
+}
+
+.order-product-name {
+    font-weight: 500;
+    margin: 0;
+}
+
+.order-product-details {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.order-total {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+/* Estilos adicionales para el contador de caracteres */
+.contar-caracteres {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+/* ====================================
+   RESPONSIVE DESIGN PARA PERFIL
+==================================== */
+
+/* Tabletas (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .profile-actions {
+        flex-wrap: wrap;
+    }
+    
+    .profile-links {
+        justify-content: center;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Móviles (max-width: 768px) */
+@media (max-width: 768px) {
+    .profile-info {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Responsivo para perfil */
+    .profile-info .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    
+    .profile-info label {
+        min-width: auto;
+        font-size: 0.9rem;
+    }
+    
+    .profile-info p {
+        text-align: left;
+        font-size: 0.9rem;
+    }
+    
+    /* Acciones responsivas */
+    .profile-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .profile-actions .btn {
+        max-width: none;
+        width: 100%;
+    }
+    
+    /* Enlaces responsivos */
+    .profile-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .profile-link {
+        min-width: auto;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    /* Historial de pedidos responsivo */
+    .order-history-header {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .order-item {
+        padding: 1rem;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .order-product {
+        gap: 0.75rem;
+    }
+    
+    .order-product-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .order-product-info {
+        font-size: 0.9rem;
+    }
+    
+    .order-product-name {
+        font-size: 0.9rem;
+    }
+    
+    .order-product-details {
+        font-size: 0.8rem;
+    }
+    
+    .order-total {
+        font-size: 1rem;
+        text-align: left;
+        margin-top: 0.5rem;
+    }
+}

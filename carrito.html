@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - StepStyle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/carrito.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">Step<span>Style</span></div>
+                <div class="header-actions">
+                    <div class="cart-icon">
+                        <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <!-- Menu del usuario -->
+                    <div class="user-menu" id="user-menu" style="display: none;">
+                        <div class="user-menu-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="user-name"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="user-dropdown">
+                            <a href="perfil.html">Mi Perfil</a>
+                            <a href="admin.html" id="admin-link" style="display: none;">Administrar</a>
+                            <a href="vendedor.html" id="vendedor-link" style="display: none;">Panel Vendedor</a>
+                            <a href="#" class="logout-btn" onclick="logout()">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                    <!-- Y el botón de login cuando no hay sesión -->
+                    <a href="login.html" class="btn btn-outline" id="login-btn">Iniciar Sesión</a>
+                    
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        <h1 class="mb-4">Carrito de Compras</h1>
+        
+        <!-- Empty Cart Message -->
+        <div id="empty-cart-message" class="empty-cart-message">
+            <h3>Tu carrito está vacío</h3>
+            <p>¿Por qué no explores nuestros productos?</p>
+            <a href="productos.html" class="btn btn-primary">Ver Productos</a>
+        </div>
+
+        <!-- Hidden Template for Cart Items -->
+        <template id="cart-item-template">
+            <div class="cart-item">
+                <div class="item-info">
+                    <img class="item-img" alt="">
+                    <div class="item-details">
+                        <h3 class="item-name"></h3>
+                        <p class="item-price"></p>
+                    </div>
+                </div>
+                <div class="item-actions">
+                    <button class="cantidad-btn decrease" type="button">-</button>
+                    <input type="number" class="cantidad-input" min="1">
+                    <button class="cantidad-btn increase" type="button">+</button>
+                    <button class="remove-btn" type="button"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </template>
+
+        <!-- Cart Items Container -->
+        <div class="row">
+            <div class="col-md-8">
+                <div id="cart-items" class="mb-4">
+                    <!-- Cart items will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="col-md-4">
+                <div class="cart-summary" style="display: none;">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">$0</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Envío:</span>
+                        <span id="cart-shipping">$0</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-3">
+                        <strong>Total:</strong>
+                        <strong id="cart-total">$0</strong>
+                    </div>
+                    <button id="checkout-btn" class="btn btn-success w-100">
+                        Finalizar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StepStyle</h3>
+                    <p>Tu tienda de confianza para calzado de calidad. Encuentra el estilo perfecto para cada ocasión.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Santiago</p>
+                    <p><i class="fas fa-phone"></i> +56 2 2345 6789</p>
+                    <p><i class="fas fa-envelope"></i> info@stepstyle.cl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StepStyle. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/carrito.js"></script>
+</body>
+</html>

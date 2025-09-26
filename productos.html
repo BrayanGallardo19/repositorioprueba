@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StepStyle - Todos los Productos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/productos.css">
+</head>
+<body>
+  <!-- Header simple -->
+   <header>
+            <div class="container">
+                <div class="header-top">
+                    <div class="logo">Step<span>Style</span></div>
+                    <div class="header-actions">
+                        <div class="cart-icon">
+                            <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+                            <span class="cart-count">0</span>
+                        </div>
+                        <!-- Menu del usuario -->
+                        <div class="user-menu" id="user-menu" style="display: none;">
+                            <div class="user-menu-btn">
+                                <i class="fas fa-user-circle"></i>
+                                <span id="user-name"></span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="user-dropdown">
+                                <a href="perfil.html">Mi Perfil</a>
+                                <a href="#" class="logout-btn" onclick="logout()">Cerrar Sesión</a>
+                            </div>
+                        </div>
+                        <!-- Y el botón de login cuando no hay sesión -->
+                        <a href="login.html" class="btn btn-outline" id="login-btn">Iniciar Sesión</a>
+                        
+                        <div class="mobile-menu-btn">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+  <!-- Contenedor de productos -->
+  <main class="container">
+    <section class="products-section">
+      <h1>Nuestros Productos</h1>
+      
+      <!-- Filtros -->
+      <div class="filters-section">
+        <div class="filter-group">
+          <label for="category-filter">Categoría:</label>
+          <select id="category-filter">
+            <option value="all">Todas las categorías</option>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="niños">Niños</option>
+            <option value="deportivos">Deportivos</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <label for="price-filter">Precio máximo:</label>
+          <input type="range" id="price-filter" min="0" max="200000" value="200000">
+          <span id="price-value">$200.000</span>
+        </div>
+        
+        <div class="filter-group">
+          <input type="text" id="search-input" placeholder="Buscar productos...">
+        </div>
+      </div>
+      
+      <!-- Grid de productos -->
+      <div class="products-grid" id="all-products">
+        <div class="loading-message">Cargando productos...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>StepStyle</h3>
+                        <p>Tu tienda de confianza para calzado de calidad. Encuentra el estilo perfecto para cada ocasión.
+                        </p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="productos.html">Productos</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Santiago</p>
+                        <p><i class="fas fa-phone"></i> +56 2 2345 6789</p>
+                        <p><i class="fas fa-envelope"></i> info@stepstyle.cl</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 StepStyle. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/productos.js"></script>
+</body>
+</html>

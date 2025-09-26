@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepStyle - Mi Perfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">Step<span>Style</span></div>
+                <div class="header-actions">
+                    <div class="cart-icon">
+                        <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <!-- Menu del usuario -->
+                    <div class="user-menu" id="user-menu">
+                        <div class="user-menu-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="user-name"></span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="user-dropdown">
+                            <a href="perfil.html">Mi Perfil</a>
+                            <a href="#" class="logout-btn" onclick="logout()">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                    <!-- Y el botón de login cuando no hay sesión -->
+                    <a href="login.html" class="btn btn-outline" id="login-btn">Iniciar Sesión</a>
+                    
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container auth-container">
+        <div class="form-container">
+            <div class="form-logo">
+                <i class="fas fa-user-circle" style="font-size: 4rem; color: #6366f1;"></i>
+            </div>
+            <h2 class="form-title">Mi Perfil</h2>
+            
+            <!-- Información del usuario -->
+            <div class="profile-info" id="profile-info">
+                <div class="form-group">
+                    <label><strong>Nombre:</strong></label>
+                    <p id="profile-nombre">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Email:</strong></label>
+                    <p id="profile-email">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>RUT:</strong></label>
+                    <p id="profile-run">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Fecha de Nacimiento:</strong></label>
+                    <p id="profile-nacimiento">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Región:</strong></label>
+                    <p id="profile-region">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Comuna:</strong></label>
+                    <p id="profile-comuna">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Dirección:</strong></label>
+                    <p id="profile-direccion">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Rol:</strong></label>
+                    <p id="profile-rol">Cargando...</p>
+                </div>
+                
+                <div class="form-group">
+                    <label><strong>Fecha de Registro:</strong></label>
+                    <p id="profile-fecha-registro">Cargando...</p>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="profile-actions">
+                <button class="btn btn-outline" onclick="editarPerfil()">
+                    <i class="fas fa-edit"></i> Editar Perfil
+                </button>
+                <button class="btn" onclick="cambiarContrasena()">
+                    <i class="fas fa-key"></i> Cambiar Contraseña
+                </button>
+            </div>
+
+            <!-- Enlaces rápidos -->
+            <div class="profile-links">
+                <a href="productos.html" class="profile-link">
+                    <i class="fas fa-shoe-prints"></i> Ver Productos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>StepStyle</h3>
+                    <p>Tu tienda de confianza para calzado de calidad. Encuentra el estilo perfecto para cada ocasión.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Santiago</p>
+                    <p><i class="fas fa-phone"></i> +56 2 2345 6789</p>
+                    <p><i class="fas fa-envelope"></i> info@stepstyle.cl</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StepStyle. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Cargar información del perfil
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asegurar que la UI de autenticación se actualice
+            if (typeof actualizarUIAutenticacion === 'function') {
+                actualizarUIAutenticacion();
+            }
+            cargarPerfilUsuario();
+        });
+
+        function cargarPerfilUsuario() {
+            const usuarioLogueado = obtenerUsuarioLogueado();
+            if (!usuarioLogueado) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Obtener datos completos del usuario desde localStorage
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+            const usuario = usuarios.find(u => u.email === usuarioLogueado.email);
+
+            if (usuario) {
+                document.getElementById('profile-nombre').textContent = usuario.nombre || 'No especificado';
+                document.getElementById('profile-email').textContent = usuario.email || 'No especificado';
+                document.getElementById('profile-run').textContent = usuario.run || 'No especificado';
+                document.getElementById('profile-nacimiento').textContent = usuario.fechaNacimiento || 'No especificado';
+                document.getElementById('profile-region').textContent = usuario.region || 'No especificado';
+                document.getElementById('profile-comuna').textContent = usuario.comuna || 'No especificado';
+                document.getElementById('profile-direccion').textContent = usuario.direccion || 'No especificado';
+                document.getElementById('profile-rol').textContent = usuario.rol || 'cliente';
+                document.getElementById('profile-fecha-registro').textContent = usuario.fechaRegistro || 'No especificado';
+            }
+        }
+
+        function editarPerfil() {
+            alert('Funcionalidad de edición de perfil en desarrollo');
+        }
+
+        function cambiarContrasena() {
+            alert('Funcionalidad de cambio de contraseña en desarrollo');
+        }
+    </script>
+</body>
+</html>

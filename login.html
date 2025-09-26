@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepStyle - Iniciar Sesión</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">Step<span>Style</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Formulario de Login -->
+    <div class="container auth-container">
+        <div class="form-container">
+            <div class="form-logo">
+                <img src="assets/img/logo/logo.png" alt="StepStyle Logo" class="logo-image">
+            </div>
+            <h2 class = "form-title">Iniciar Sesión</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Correo Electrónico</label>
+                    <input type="email" id="login-email" required>
+                    <div class="error-message" id="login-email-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="login-contrasena">Contraseña</label>
+                    <input type="password" id="login-contrasena" required>
+                    <div class="error-message" id="login-contrasena-error"></div>
+                </div>
+
+                <button type="submit" class="btn">Iniciar Sesión</button>
+
+                <div class="form-footer">
+                    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 StepStyle. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de autenticación -->
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

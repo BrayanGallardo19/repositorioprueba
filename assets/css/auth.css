@@ -1,0 +1,143 @@
+/* Estilos específicos para las páginas de autenticación */
+
+/* Variables */
+:root {
+    --color-rojo: #e63946; /* Rojo vibrante */
+    --color-blanco: #ffffff;
+    --sombra-gris: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --color-gris-oscuro: #333;
+    --color-gris-claro: #ddd;
+    --transicion: all 0.3s ease;
+    --color-texto-oscuro: #333;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 40px 0;
+}
+
+.form-container {
+    background: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: var(--sombra-gris);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    max-width: 300px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-gris-oscuro);
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: var(--color-rojo);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    background: var(--color-rojo);
+    color: var(--color-blanco);
+    padding: 12px 20px;
+    border-radius: 4px;
+    transition: var(--transicion);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #c1121f;
+    transform: translateY(-2px);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    color: var(--color-rojo);
+    font-weight: 500;
+}
+
+/* Estilos específicos para el formulario de contacto */
+.form-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-texto-oscuro);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-gris-oscuro);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.char-counter {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #747d8c;
+    margin-top: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+}

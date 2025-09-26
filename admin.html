@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StepStyle - Vista Administrador</title>
+  <!-- Cargar Bootstrap para usar su sistema de grillas, tablas y componentes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-dark text-white p-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <h1 class="h3 mb-0">Panel de Administración</h1>
+      <button class="btn btn-danger btn-sm" onclick="logout()">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main class="container-fluid my-4">
+    <!-- Cambiar entre secciones sin recargar -->
+    <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="usuarios-tab" data-bs-toggle="tab" data-bs-target="#usuarios" type="button" role="tab">Usuarios</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="productos-tab" data-bs-toggle="tab" data-bs-target="#productos" type="button" role="tab">Productos</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="vista-previa-tab" data-bs-toggle="tab" data-bs-target="#vista-previa" type="button" role="tab">Vista Previa</button>
+      </li>
+    </ul>
+
+    <!-- Contenido de pestañas -->
+    <div class="tab-content mt-3" id="adminTabsContent">
+      <!-- Gestión de Usuarios -->
+      <div class="tab-pane fade show active" id="usuarios" role="tabpanel">
+        <h2 class="h5">Gestión de Usuarios</h2>
+        <button class="btn btn-primary mb-3" onclick="mostrarFormularioUsuario()">Crear Usuario</button>
+        
+        <!-- Formulario para crear nuevo usuario -->
+        <div id="form-usuario" class="card mb-3" style="display:none;">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Crear Nuevo Usuario</h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" id="nombreUsuario" class="form-control mb-2" placeholder="Nombre completo" required>
+                <input type="email" id="emailUsuario" class="form-control mb-2" placeholder="Correo electrónico" required>
+                <input type="password" id="contrasenaUsuario" class="form-control mb-2" placeholder="Contraseña" required>
+              </div>
+              <div class="col-md-6">
+                <select id="rolUsuario" class="form-select mb-2" required>
+                  <option value="">Seleccionar rol</option>
+                  <option value="cliente">Cliente</option>
+                  <option value="vendedor">Vendedor</option>
+                  <option value="admin">Administrador</option>
+                </select>
+                <select id="generoUsuario" class="form-select mb-2">
+                  <option value="">Seleccionar género</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <input type="date" id="fechaNacimientoUsuario" class="form-control mb-2" placeholder="Fecha de nacimiento">
+                <select id="regionUsuario" class="form-select mb-2">
+                  <option value="">Seleccionar región</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12">
+              <select id="comunaUsuario" class="form-select mb-2" disabled>
+                <option value="">Primero selecciona una región</option>
+              </select>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-success" onclick="guardarUsuario()">Guardar Usuario</button>
+              <button class="btn btn-secondary" onclick="cancelarFormularioUsuario()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tabla Bootstrap: tabla con estilos responsivos -->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Fecha Registro</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="usuarios-table">
+              <!-- Se llenara dinamicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Gestión de Productos -->
+      <div class="tab-pane fade" id="productos" role="tabpanel">
+        <h2 class="h5">Gestión de Productos</h2>
+        <button class="btn btn-primary mb-3" onclick="mostrarFormularioProducto()">Añadir Producto</button>
+            <div id="form-producto" class="mb-3" style="display:none;">
+            <input type="text" id="nombreProducto" class="form-control mb-2" placeholder="Nombre del producto" required>
+            <select id="categoriaProducto" class="form-control mb-2" required>
+              <option value="">Seleccionar categoría</option>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+              <option value="niños">Niños</option>
+              <option value="deportivos">Deportivos</option>
+            </select>
+            <input type="number" id="precioProducto" class="form-control mb-2" placeholder="Precio" required>
+            <input type="text" id="imagenProducto" class="form-control mb-2" placeholder="URL de la imagen" required>
+            <textarea id="descripcionProducto" class="form-control mb-2" placeholder="Descripción del producto"></textarea>
+            <input type="number" id="stockProducto" class="form-control mb-2" placeholder="Stock inicial" required>
+            <button class="btn btn-success" onclick="guardarProducto()">Guardar</button>
+            </div>
+
+        <!-- Tabla de productos responsiva -->
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productos-table">
+            <!-- Se llenará dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <!-- Vista Previa del Sitio -->
+      <div class="tab-pane fade" id="vista-previa" role="tabpanel">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 mb-0">Vista Previa del Sitio Web</h2>
+          <div>
+            <button class="btn btn-outline-primary btn-sm me-2" onclick="cambiarPaginaPrevia('index.html')">Inicio</button>
+            <button class="btn btn-outline-primary btn-sm me-2" onclick="cambiarPaginaPrevia('productos.html')">Productos</button>
+            <button class="btn btn-outline-primary btn-sm me-2" onclick="cambiarPaginaPrevia('blog.html')">Blog</button>
+            <button class="btn btn-outline-primary btn-sm me-2" onclick="cambiarPaginaPrevia('contacto.html')">Contacto</button>
+            <button class="btn btn-secondary btn-sm" onclick="cerrarVistaPrevia()">Volver al Panel</button>
+          </div>
+        </div>
+        
+        <!-- Contenedor del iframe para la vista previa -->
+        <div class="preview-container" style="border: 2px solid #dee2e6; border-radius: 8px; overflow: hidden; height: 70vh;">
+          <iframe id="preview-iframe" 
+                  src="index.html" 
+                  style="width: 100%; height: 100%; border: none;"
+                  title="Vista previa del sitio web">
+          </iframe>
+        </div>
+        
+        <!-- Información adicional -->
+        <div class="mt-3">
+          <div class="alert alert-info" role="alert">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>Vista Previa:</strong> Aquí puede navegar por las diferentes páginas del sitio web tal como las ven los usuarios. 
+            Use los botones superiores para cambiar entre páginas o haga clic en "Volver al Panel" para regresar a la administración.
+          </div>
+          <div class="alert alert-warning" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            <strong>Nota:</strong> En esta vista previa se han desactivado/ocultado los siguientes elementos para mantener segura su sesión:
+            <ul class="mb-0 mt-2">
+              <li>Botones de "Cerrar Sesión"</li>
+              <li>Enlaces a "Panel Vendedor"</li>
+              <li>Enlaces a "Panel Administrador"</li>
+              <li>Cualquier función administrativa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center p-3">
+    <div class="container-fluid">
+      <p class="mb-0">&copy; 2025 StepStyle - Panel de Administración</p>
+    </div>
+  </footer>
+
+  <!-- Cargar main.js para funciones como logout -->
+  <script src="assets/js/main.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scripts propios -->
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/admin.js"></script>

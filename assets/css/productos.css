@@ -1,0 +1,119 @@
+/* Estilos específicos para la página de productos */
+
+.products-section {
+    padding: 40px 0;
+}
+
+.products-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-gris-oscuro);
+}
+
+/* Sección de filtros */
+.filters-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--color-gris-oscuro);
+}
+
+.filter-group select,
+.filter-group input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.filter-group input[type="range"] {
+    width: 150px;
+}
+
+#price-value {
+    font-weight: bold;
+    color: var(--color-rojo);
+    min-width: 80px;
+}
+
+/* Estados de carga y sin resultados */
+.loading-message,
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Estilos de productos */
+.product-title {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0 8px 0;
+    line-height: 1.3;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 8px 0;
+}
+
+.add-to-cart-btn {
+    background: var(--color-rojo);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+    background: #c1121f;
+}
+
+.add-to-cart-btn.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Notificación del carrito */
+.cart-notification {
+    font-family: inherit;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .filters-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        justify-content: space-between;
+    }
+    
+    .filter-group input[type="range"] {
+        width: 100px;
+    }
+}

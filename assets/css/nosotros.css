@@ -1,0 +1,356 @@
+/*  ESTILOS PARA PÁGINA NOSOTROS */
+
+/* Hero de Nosotros */
+.nosotros-hero {
+    background: linear-gradient(135deg, var(--color-gris-oscuro) 0%, #2c2c2c 100%);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 80px 0;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.nosotros-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.nosotros-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.nosotros-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Sección de Historia */
+.historia {
+    padding: 80px 0;
+    background: var(--color-gris-claro);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+}
+
+.text-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--color-primario);
+    border-radius: 2px;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 20px;
+}
+
+.nosotros-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+}
+
+.nosotros-img:hover {
+    transform: scale(1.02);
+}
+
+/* Sección Misión y Visión */
+.mision-vision {
+    padding: 80px 0;
+    background: var(--color-blanco);
+}
+
+.mision-vision h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mv-card {
+    background: var(--color-gris-claro);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.mv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.mv-card:hover::before {
+    transform: translateX(100%);
+}
+
+.mv-card h3 {
+    font-size: 1.8rem;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.mv-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-texto-oscuro);
+}
+
+/* Sección de Desarrolladores (Equipo) */
+.equipo {
+    padding: 80px 0;
+    background: var(--color-gris-claro);
+}
+
+.equipo h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.miembro-card {
+    background: var(--color-blanco);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.miembro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-primario);
+}
+
+.miembro-info h4 {
+    font-size: 1.5rem;
+    color: var(--color-gris-oscuro);
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.miembro-info h4 i {
+    color: var(--color-primario);
+    font-size: 1.3rem;
+}
+
+.miembro-info p {
+    color: var(--color-texto-secundario);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.miembro-redes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.miembro-redes a {
+    width: 45px;
+    height: 45px;
+    background: var(--color-gris-claro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gris-medio);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.miembro-redes a:hover {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    transform: scale(1.1);
+}
+
+.miembro-redes a[title="GitHub"]:hover {
+    background: #333;
+}
+
+/* Media Queries - Responsive Design */
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .nosotros-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .content-grid {
+        gap: 40px;
+    }
+    
+    .text-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Móviles (max-width: 768px) */
+@media (max-width: 768px) {
+    .nosotros-hero {
+        padding: 60px 0;
+    }
+    
+    .nosotros-hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .nosotros-hero p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .historia,
+    .mision-vision,
+    .equipo {
+        padding: 60px 0;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .text-content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .text-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .nosotros-img {
+        height: 300px;
+        margin: 0 auto;
+    }
+    
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .mv-card {
+        padding: 30px 20px;
+    }
+    
+    .mv-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .mv-card p {
+        font-size: 1rem;
+    }
+    
+    .mision-vision h2 {
+        font-size: 2rem;
+    }
+    
+    .equipo h2 {
+        font-size: 2rem;
+    }
+    
+    .equipo-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .miembro-info h4 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .miembro-info h4 i {
+        font-size: 1.1rem;
+    }
+    
+    .miembro-info p {
+        font-size: 1rem;
+    }
+    
+    .miembro-card {
+        padding: 30px 20px;
+    }
+}

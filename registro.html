@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepStyle - Crear Cuenta</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">Step<span>Style</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Auth Container -->
+    <div class="container auth-container">
+        <div class="form-container">
+            <h2 class="form-title">Crear Cuenta</h2>
+            
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="registro-run">RUT</label>
+                    <input type="text" id="registro-run" placeholder="19011022K" maxlength="9" required>
+                    <div class="error-message" id="registro-run-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-nombre">Nombre completo</label>
+                    <input type="text" id="registro-nombre" required>
+                    <div class="error-message" id="registro-nombre-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registro-email">Correo electrónico</label>
+                    <input type="email" id="registro-email" required>
+                    <div class="error-message" id="registro-email-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registro-nacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="registro-nacimiento" required>
+                    <div class="error-message" id="registro-nacimiento-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-region">Región</label>
+                    <select id="registro-region" required>
+                        <option value="">Selecciona una región</option>
+                    </select>
+                    <div class="error-message" id="registro-region-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-comuna">Comuna</label>
+                    <select id="registro-comuna" required disabled>
+                        <option value="">Selecciona una comuna</option>
+                    </select>
+                    <div class="error-message" id="registro-comuna-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-direccion">Dirección</label>
+                    <input type="text" id="registro-direccion" required>
+                    <div class="error-message" id="registro-direccion-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registro-contrasena">Contraseña</label>
+                    <input type="password" id="registro-contrasena" required>
+                    <div class="error-message" id="registro-contrasena-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="registro-confirmar-contrasena">Confirmar contraseña</label>
+                    <input type="password" id="registro-confirmar-contrasena" required>
+                    <div class="error-message" id="registro-confirmar-contrasena-error"></div>
+                </div>
+
+                <!-- Campo oculto para rol  -->
+                <input type="hidden" id="registro-rol" value="cliente">
+                
+                <button type="submit" class="btn">Crear Cuenta</button>
+                
+                <div class="form-footer">
+                    ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 StepStyle. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/regiones-comunas.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
